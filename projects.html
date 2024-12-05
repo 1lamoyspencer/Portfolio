@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Projects</title>
   <link rel="stylesheet" href="css/styles.css">
-  <script src="scripts.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <!-- Sidebar -->
@@ -19,9 +19,9 @@
   </aside>
 
   <!-- Banner -->
-  <div class="banner">
+  <header class="banner">
     <h1>My Projects</h1>
-  </div>
+  </header>
 
   <!-- Projects Section -->
   <section id="projects" class="projects">
@@ -29,25 +29,45 @@
     <div class="projects-container">
       <!-- Project 1 -->
       <div class="project-card">
-        <img src="images/project1.jpg" alt="Project 1">
+        <img src="images/project1.jpg" alt="Project 1 Screenshot">
         <h3>Project Title 1</h3>
-        <p>A brief description of the project.</p>
-        <a href="https://github.com/username/project1" target="_blank">View on GitHub</a>
+        <p>A brief description of the project. This project focuses on [add specifics of what it involves or solves].</p>
+        <a href="https://github.com/username/project1" target="_blank" rel="noopener noreferrer">View on GitHub</a>
       </div>
 
       <!-- Project 2 -->
       <div class="project-card">
-        <img src="images/project2.jpg" alt="Project 2">
+        <img src="images/project2.jpg" alt="Project 2 Screenshot">
         <h3>Project Title 2</h3>
-        <p>A brief description of the project.</p>
-        <a href="https://github.com/username/project2" target="_blank">View on GitHub</a>
+        <p>A brief description of the project. This project focuses on [add specifics of what it involves or solves].</p>
+        <a href="https://github.com/username/project2" target="_blank" rel="noopener noreferrer">View on GitHub</a>
       </div>
     </div>
   </section>
 
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio">
+    <h2>Portfolio Gallery</h2>
+    <div class="portfolio-container">
+      <div class="portfolio-item" data-caption="Project 1">
+        <img src="images/project1.jpg" alt="Portfolio Image for Project 1">
+      </div>
+      <div class="portfolio-item" data-caption="Project 2">
+        <img src="images/project2.jpg" alt="Portfolio Image for Project 2">
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" style="display: none;">
+    <span class="close">&times;</span>
+    <img id="modal-img" alt="Enlarged Portfolio Item">
+    <p id="caption"></p>
+  </div>
+
   <!-- Footer -->
   <footer>
-    <p>&copy; 2024 Lamoy Spencer</p>
+    <p>&copy; 2024 Lamoy Spencer. All Rights Reserved.</p>
   </footer>
 </body>
 </html>
