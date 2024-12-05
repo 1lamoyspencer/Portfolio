@@ -46,8 +46,8 @@ body {
 
 .sidebar ul li a {
   text-decoration: none;
-  font-family: 'Arial', sans-serif; /
-  font-weight: bold; 
+  font-family: 'Arial', sans-serif; /* Use a different font */
+  font-weight: bold; /* Make the text bold */
   color: white;
   background-color: var(--primary-color); /* Add a box background */
   padding: 0.5rem 1rem; /* Add padding to create a box effect */
@@ -58,6 +58,54 @@ body {
 .sidebar ul li a:hover {
   background-color: var(--secondary-color); /* Change box background on hover */
   color: white; /* Keep the text color white */
+}
+
+/* Banner */
+.banner {
+  width: 100%;
+  height: 250px; /* Adjust banner height */
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-top: 6rem; /* Push down for sidebar space */
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-top: 2rem; /* Space above the content */
+  padding: 3rem 1rem;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); /* Gradient background */
+  color: white;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow effect for header */
+}
+
+header h1 {
+  font-size: 4rem; /* Increase heading size */
+  font-family: var(--font-heading);
+  margin-bottom: 1rem; /* Space below the heading */
+}
+
+header p {
+  font-size: 1.5rem; /* Increase paragraph size */
+  margin-top: 1rem;
+}
+
+/* Profile Picture */
+header .profile-img {
+  width: 250px; /* Make the image bigger */
+  height: 250px;
+  border-radius: 50%;
+  margin-top: 2rem;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 5px solid var(--primary-color); /* Add a border around the image */
 }
 
 /* Footer */
@@ -78,5 +126,23 @@ footer {
 
   .sidebar ul li {
     margin-bottom: 0.5rem;
+  }
+
+  header .profile-img {
+    width: 200px; /* Smaller image on mobile */
+    height: 200px;
+  }
+
+  header h1 {
+    font-size: 2.5rem; /* Smaller heading on mobile */
+  }
+
+  header p {
+    font-size: 1.2rem; /* Smaller paragraph text */
+  }
+
+  .banner {
+    height: 200px; /* Adjust banner height on smaller screens */
+    font-size: 2rem; /* Smaller text for banner on mobile */
   }
 }
