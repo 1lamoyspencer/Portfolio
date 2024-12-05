@@ -3,13 +3,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif; /* Base font */
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.6;
-  background-color: #fff;
+  background-color: #f5f5f5; /* Light gray background */
   color: #333;
+  line-height: 1.6;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -19,52 +19,58 @@ a {
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Montserrat', sans-serif;
-  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif; /* Heading font */
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
-p {
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.6;
-}
-
-/* Header Styles */
+/* Header */
 header {
-  background: linear-gradient(to right, #4CAF50, #FF9800);
+  background: linear-gradient(to right, #FF6347, #FF4500); /* Warm gradient */
   color: #fff;
-  padding: 2rem 5%;
+  padding: 6rem 10%;
   text-align: center;
-  position: relative;
-  z-index: 10;
+  border-bottom: 4px solid #fff;
 }
 
 header h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin: 0;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
 }
 
 header h2 {
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #f8f8f8;
 }
 
 header a {
+  background-color: transparent; /* Transparent background */
+  border: 2px solid #fff;
+  padding: 0.8rem 2rem;
   color: #fff;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 2px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Sticky Navigation Bar */
+header a:hover {
+  background-color: #fff;
+  color: #FF6347;
+  cursor: pointer;
+}
+
+/* Navigation */
 nav {
-  position: sticky;
-  top: 0;
   background: #333;
   color: #fff;
-  padding: 1rem;
-  z-index: 20;
+  padding: 1.2rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 nav ul {
@@ -80,83 +86,87 @@ nav ul li {
 nav ul li a {
   color: #fff;
   font-size: 1.2rem;
-  text-transform: uppercase;
-  padding: 0.5rem;
-  transition: color 0.3s;
+  font-weight: 500;
+  padding: 0.6rem 1rem;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #FF9800;
+  color: #FF6347;
 }
 
-/* Container Styles */
+/* Container and Layout */
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem auto;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 3rem;
+  padding: 3rem 5%;
   max-width: 1200px;
-  padding: 0 1rem;
+  margin: 0 auto;
+  animation: fadeIn 1s ease-in; /* Animation */
 }
 
+/* Cards for Projects */
 .card {
   background: #fff;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  overflow: hidden;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 15px;
+  padding: 1.5rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
   width: 100%;
-  height: 200px;
+  height: 250px;
   object-fit: cover;
-}
-
-.card .content {
-  padding: 1.5rem;
-  text-align: center;
+  border-radius: 15px;
+  margin-bottom: 1.5rem;
 }
 
 .card h3 {
-  font-size: 1.5rem;
-  color: #4CAF50;
+  font-size: 1.6rem;
+  color: #FF6347;
+  margin-bottom: 1rem;
 }
 
 .card p {
   color: #777;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-button {
-  display: inline-block;
-  padding: 1rem 2rem;
-  background: #4CAF50;
+.card button {
+  padding: 0.8rem 2rem;
+  background-color: #FF6347;
   color: #fff;
   font-size: 1.2rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background: #FF9800;
+.card button:hover {
+  background-color: #FF4500;
 }
 
 /* Footer */
 footer {
   background: #333;
   color: #fff;
-  padding: 1rem;
+  padding: 2rem;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 4rem;
+}
+
+footer p {
+  font-size: 1.2rem;
+  color: #bbb;
 }
 
 /* Dark Mode */
@@ -166,11 +176,7 @@ body.dark-mode {
 }
 
 body.dark-mode header {
-  background: linear-gradient(to right, #FF9800, #4CAF50);
-}
-
-body.dark-mode nav {
-  background-color: #222;
+  background: linear-gradient(to right, #FF4500, #FF6347);
 }
 
 body.dark-mode .card {
@@ -179,22 +185,31 @@ body.dark-mode .card {
 }
 
 body.dark-mode .card:hover {
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
-body.dark-mode button {
-  background: #FF9800;
-  color: #333;
+body.dark-mode .card button {
+  background-color: #FF4500;
 }
 
-body.dark-mode button:hover {
-  background: #4CAF50;
+body.dark-mode .card button:hover {
+  background-color: #FF6347;
+}
+
+/* Animations and Effects */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   header h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   nav ul {
@@ -206,6 +221,10 @@ body.dark-mode button:hover {
   }
 
   .container {
-    padding: 0;
+    padding: 2rem 3%;
+  }
+
+  .card {
+    padding: 1rem;
   }
 }
