@@ -9,42 +9,81 @@
 </head>
 <body>
     <!-- Sidebar -->
-  <aside class="sidebar">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </aside
+    <aside class="sidebar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </aside>
 
-      
     <!-- Header Section -->
-    <header>
+    <header id="home">
         <div>
             <h1>Lamoy Spencer's Webpage</h1>
-            <p>Computer Science Student | 2nd Year | Lincoln University oF PA</p>
+            <p>Computer Science Student | 2nd Year | Lincoln University of PA</p>
             <img src="self.jpg" alt="Lamoy Spencer" class="profile-img" />
         </div>
     </header>
 
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="skills.html">Skills</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
+    <!-- Main Content -->
     <main>
-        <h2>Welcome to My Portfolio</h2>
-        <p>This is my personal portfolio where you can learn more about me, my projects, and my skills.</p>
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Welcome to my personal portfolio! I am a passionate Computer Science student, committed to developing innovative projects and honing my technical skills.</p>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="portfolio-item">
+                <img src="project1.jpg" alt="Project 1">
+                <p>Project 1 Description</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="project2.jpg" alt="Project 2">
+                <p>Project 2 Description</p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div id="skillsChart">
+                <div class="skill">
+                    <span class="skill-name">Python</span>
+                    <div class="progress-bar" data-progress="90"></div>
+                </div>
+                <div class="skill">
+                    <span class="skill-name">Java</span>
+                    <div class="progress-bar" data-progress="85"></div>
+                </div>
+                <div class="skill">
+                    <span class="skill-name">Web Design</span>
+                    <div class="progress-bar" data-progress="75"></div>
+                </div>
+                <div class="skill">
+                    <span class="skill-name">Data Science</span>
+                    <div class="progress-bar" data-progress="80"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form id="contactForm">
+                <input type="email" id="email" placeholder="Your Email" required>
+                <textarea id="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Lamoy Spencer. All Rights Reserved.</p>
     </footer>
@@ -52,4 +91,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
