@@ -1,60 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lamoy Spencer's Web Development Portfolio">
+    <title>Lamoy Spencer's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Lamoy Spencer</h1>
+    <!-- Header Section -->
+    <header>
+        <div>
+            <h1>Lamoy Spencer</h1>
+            <p>Computer Science Student | Web Developer | Data Science Enthusiast</p>
+            <button id="theme-toggle">Switch Theme</button>
+        </div>
+    </header>
+
+    <!-- Navigation -->
     <nav>
-      <a href="#about">About Me</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
-  </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hello! I’m Lamoy Spencer, a Computer Science student passionate about software development and design.</p>
-  </section>
+    <!-- About Me Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hi, I'm Lamoy Spencer, a passionate computer science student currently pursuing my degree at Lincoln University. I have a strong interest in web development, data science, and software engineering. My goal is to apply my technical skills to solve real-world problems and contribute to innovative solutions.</p>
+        <p>Outside of academics, I'm a tech enthusiast, involved in various student organizations, and always eager to collaborate on exciting projects that challenge my creativity and problem-solving abilities. I'm actively seeking internships and opportunities to grow as a developer and expand my professional network.</p>
+    </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>Project 1</h3>
-      <p>A description of your project with links to the GitHub repo.</p>
-    </div>
-  </section>
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <input type="text" id="projectSearch" placeholder="Search projects...">
+        <select id="projectFilter">
+            <option value="all">All Projects</option>
+            <option value="web">Web Development</option>
+            <option value="data">Data Science</option>
+        </select>
+        <div class="project-container">
+            <!-- Individual Project Cards -->
+            <div class="project-card web">
+                <h3>Project 1</h3>
+                <p>Description of the first project.</p>
+            </div>
+            <div class="project-card data">
+                <h3>Project 2</h3>
+                <p>Description of the second project.</p>
+            </div>
+        </div>
+    </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-    </ul>
-  </section>
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div id="skillsChart"></div>
+    </section>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email">
-      <label for="message">Message:</label>
-      <textarea id="message" name="message"></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
 
-  <footer>
-    <p>&copy; 2024 Lamoy Spencer</p>
-  </footer>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Lamoy Spencer. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
