@@ -46,14 +46,18 @@ body {
 
 .sidebar ul li a {
   text-decoration: none;
+  font-family: 'Arial', sans-serif; /
+  font-weight: bold; 
   color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  background-color: var(--primary-color); /* Add a box background */
+  padding: 0.5rem 1rem; /* Add padding to create a box effect */
+  border-radius: 5px; /* Round the corners of the box */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .sidebar ul li a:hover {
-  color: var(--primary-color);
+  background-color: var(--secondary-color); /* Change box background on hover */
+  color: white; /* Keep the text color white */
 }
 
 /* Footer */
