@@ -13,8 +13,10 @@
   <aside class="sidebar">
     <button class="sidebar-toggle">☰</button>
     <ul>
+      <li><a href="index.html">Home</a></li> <!-- Added Home link -->
       <li><a href="index.html#projects">Projects</a></li>
       <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#skills">Skills</a></li> <!-- Added Skills link -->
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
   </aside>
@@ -30,7 +32,7 @@
     <div class="projects-container">
       <!-- Project 1 -->
       <div class="project-card">
-        <img src="images/project1.jpg" alt="Project 1 Screenshot">
+        <img src="images/project1.jpg" alt="Project 1 Screenshot" class="project-image">
         <h3>Project Title 1</h3>
         <p>A brief description of the project. This project focuses on [add specifics of what it involves or solves].</p>
         <a href="https://github.com/username/project1" target="_blank" rel="noopener noreferrer">View on GitHub</a>
@@ -38,7 +40,7 @@
 
       <!-- Project 2 -->
       <div class="project-card">
-        <img src="images/project2.jpg" alt="Project 2 Screenshot">
+        <img src="images/project2.jpg" alt="Project 2 Screenshot" class="project-image">
         <h3>Project Title 2</h3>
         <p>A brief description of the project. This project focuses on [add specifics of what it involves or solves].</p>
         <a href="https://github.com/username/project2" target="_blank" rel="noopener noreferrer">View on GitHub</a>
@@ -51,10 +53,10 @@
     <h2>Portfolio Gallery</h2>
     <div class="portfolio-container">
       <div class="portfolio-item" data-caption="Project 1">
-        <img src="images/project1.jpg" alt="Portfolio Image for Project 1">
+        <img src="images/project1.jpg" alt="Portfolio Image for Project 1" class="portfolio-img">
       </div>
       <div class="portfolio-item" data-caption="Project 2">
-        <img src="images/project2.jpg" alt="Portfolio Image for Project 2">
+        <img src="images/project2.jpg" alt="Portfolio Image for Project 2" class="portfolio-img">
       </div>
     </div>
   </section>
@@ -71,6 +73,44 @@
     <p>&copy; 2024 Lamoy Spencer. All Rights Reserved.</p>
   </footer>
 
-  
+  <!-- JavaScript -->
+  <script>
+    // Sidebar Toggle Functionality
+    const sidebarToggle = document.querySelector('.sidebar-toggle');
+    const sidebar = document.querySelector('.sidebar');
+
+    sidebarToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+
+    // Theme Toggle Functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Check if there's a stored theme preference
+    const storedTheme = localStorage.getItem('theme');
+
+    // Apply the stored theme on page load
+    if (storedTheme === 'dark') {
+      body.classList.add('dark-mode');
+      themeToggle.textContent = '🌞'; 
+    } else {
+      body.classList.remove('dark-mode');
+      themeToggle.textContent = '🌙'; 
+    }
+
+    // Toggle theme on button click
+    themeToggle.addEventListener('click', () => {
+      if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        themeToggle.textContent = '🌙'; 
+        localStorage.setItem('theme', 'light'); 
+      } else {
+        body.classList.add('dark-mode');
+        themeToggle.textContent = '🌞'; 
+        localStorage.setItem('theme', 'dark'); 
+      }
+    });
+  </script>
 </body>
 </html>
