@@ -1,168 +1,95 @@
-/* Global Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lamoy Spencer's Web Development Portfolio - About">
+    <title>About - Lamoy Spencer</title>
+    <link rel="stylesheet" href="css/about.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Top Banner Navigation -->
+    <header class="header">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <button class="sidebar-toggle">☰</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </aside>
+    
+    <!-- Main Content -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Welcome to my personal portfolio! My name is Lamoy Spencer, and I am an international student from Jamaica, currently pursuing a degree in Computer Science at Lincoln University of Pennsylvania. I have always been passionate about technology and its power to solve complex problems, improve lives, and drive innovation. As a second-year student, I have developed a strong foundation in programming, data science, and web development, and I am constantly seeking new opportunities to expand my knowledge and skills.
 
-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
+        Throughout my academic journey, I’ve had the chance to work on various projects that have allowed me to apply my theoretical knowledge to real-world challenges. I take pride in my ability to work both independently and as part of a team, and I enjoy collaborating with others to create solutions that make a difference. Outside of my studies, I am involved in extracurricular activities that have helped me grow as a leader and as an individual, including my role as a peer mentor and active involvement in the Caribbean Student Association.
 
-/* Header Navigation Bar */
-.header {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
+        This portfolio showcases my work, skills, and achievements, providing a glimpse into my growth as a computer science student and as an aspiring professional in the tech industry. I am excited about the future and the many opportunities to make an impact through technology.</p>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Lamoy Spencer. All Rights Reserved.</p>
+    </footer>
 
-.nav-links {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle">🌙</button>
 
-.nav-links li {
-    margin: 0 20px;
-}
+    <!-- JavaScript -->
+    <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
 
-.nav-links a {
-    color: white;
-    font-size: 18px;
-    padding: 10px 15px;
-    text-transform: uppercase;
-    display: inline-block;
-}
+        // Check if there's a stored theme preference
+        const storedTheme = localStorage.getItem('theme');
 
-.nav-links a:hover {
-    background-color: #555;
-    border-radius: 5px;
-}
+        // Apply the stored theme on page load
+        if (storedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeToggle.textContent = '🌞'; 
+        } else {
+            body.classList.remove('dark-mode');
+            themeToggle.textContent = '🌙'; 
+        }
 
-/* Sidebar Styles */
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 100%;
-    background-color: #333;
-    color: #fff;
-    padding-top: 60px;
-    transition: transform 0.3s ease;
-    transform: translateX(-250px);
-}
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                themeToggle.textContent = '🌙'; 
+                localStorage.setItem('theme', 'light'); 
+            } else {
+                body.classList.add('dark-mode');
+                themeToggle.textContent = '🌞'; 
+                localStorage.setItem('theme', 'dark'); 
+            }
+        });
 
-.sidebar.active {
-    transform: translateX(0);
-}
+        // Sidebar Toggle Functionality
+        const sidebarToggle = document.querySelector('.sidebar-toggle');
+        const sidebar = document.querySelector('.sidebar');
 
-.sidebar-toggle {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 24px;
-    color: #fff;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    padding: 15px 20px;
-}
-
-.sidebar ul li a {
-    color: #fff;
-    font-size: 18px;
-    display: block;
-}
-
-.sidebar ul li a:hover {
-    background-color: #555;
-}
-
-/* About Section Styles */
-#about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 100px 20px;
-    margin-top: 60px; /* Adjusted to avoid overlap with the header */
-}
-
-#about h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-#about p {
-    font-size: 1.1rem;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-/* Theme Toggle Button */
-#theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #333;
-}
-
-body.dark-mode {
-    background-color: #121212;
-    color: #fff;
-}
-
-body.dark-mode .sidebar {
-    background-color: #222;
-}
-
-body.dark-mode .sidebar ul li a {
-    color: #fff;
-}
-
-body.dark-mode .sidebar ul li a:hover {
-    background-color: #444;
-}
-
-/* Footer Styles */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
-}
-
-footer p {
-    margin: 0;
-}
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
