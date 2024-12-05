@@ -1,25 +1,116 @@
-.skills {
-  padding: 2rem;
+/* Global Variables */
+:root {
+  /* Light Mode Variables */
+  --primary-color: #ff4500; /* Orange Red */
+  --secondary-color: #ff6347; /* Tomato */
+  --background-color: #f5f5f5; /* Light Gray */
+  --text-color: #333; /* Dark Text */
+  --card-background: #ffffff; /* White for cards */
+  --card-border: #ddd; /* Light gray border */
+
+  /* Dark Mode Variables */
+  --dark-primary-color: #ff6347; /* Tomato */
+  --dark-secondary-color: #ff4500; /* Orange Red */
+  --dark-background-color: #121212; /* Almost Black */
+  --dark-text-color: #f5f5f5; /* Light Gray Text */
+  --dark-card-background: #1e1e1e; /* Dark Gray for cards */
+  --dark-card-border: #444; /* Dark border */
+}
+
+/* Reset and Box Model */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  font-family: 'Roboto', sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-body.dark-mode .skills {
+/* Dark Mode Body Styles */
+body.dark-mode {
   background-color: var(--dark-background-color);
   color: var(--dark-text-color);
 }
 
-.skill-item {
-  background-color: #ffffff;
-  color: var(--text-color);
-  border: 1px solid #ddd;
-  border-radius: 5px;
+/* Container for the Skills Section */
+.skills-section {
+  max-width: 1200px;
+  margin: 2rem auto;
   padding: 1rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body.dark-mode .skill-item {
-  background-color: #1e1e1e;
+.skills-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.skill-card {
+  background-color: var(--card-background);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.skill-card h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.skill-card p {
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+body.dark-mode .skill-card {
+  background-color: var(--dark-card-background);
+  border: 1px solid var(--dark-card-border);
+}
+
+body.dark-mode .skill-card h3 {
+  color: var(--dark-primary-color);
+}
+
+body.dark-mode .skill-card p {
   color: var(--dark-text-color);
+}
+
+/* Hover Effects */
+.skill-card:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+body.dark-mode .skill-card:hover {
+  background-color: var(--dark-secondary-color);
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: white;
 }
