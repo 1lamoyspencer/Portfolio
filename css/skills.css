@@ -1,0 +1,30 @@
+@import url('global.css');
+
+/* Skills Section */
+#skills {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#skills h2 {
+  text-align: center;
+  font-family: var(--font-heading);
+  color: var(--primary-color);
+}
+
+.skill {
+  margin-bottom: 1.5rem;
+}
+
+.skill-name {
+  font-weight: bold;
+}
+
+.progress-bar {
+  width: 0;
+  height: 20px;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
