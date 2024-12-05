@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/global.css">
     <script src="script.js" defer></script>
-    
 </head>
 <body>
+    <!-- Sidebar -->
     <aside class="sidebar">
         <button class="sidebar-toggle">☰</button>
         <ul>
@@ -21,13 +21,59 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </aside>
+    
+    <!-- Main Content -->
     <header>
         <h1>Welcome to My Portfolio</h1>
         <p>Computer Science Student | 2nd Year | Lincoln University of PA</p>
     </header>
+    
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle">🌙</button>
+    
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Lamoy Spencer. All Rights Reserved.</p>
     </footer>
-    
+
+    <!-- JavaScript -->
+    <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Check if there's a stored theme preference
+        const storedTheme = localStorage.getItem('theme');
+
+        // Apply the stored theme on page load
+        if (storedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeToggle.textContent = '🌞'; 
+        } else {
+            body.classList.remove('dark-mode');
+            themeToggle.textContent = '🌙'; 
+        }
+
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                themeToggle.textContent = '🌙'; 
+                localStorage.setItem('theme', 'light'); 
+            } else {
+                body.classList.add('dark-mode');
+                themeToggle.textContent = '🌞'; 
+                localStorage.setItem('theme', 'dark'); 
+            }
+        });
+
+        // Sidebar Toggle Functionality
+        const sidebarToggle = document.querySelector('.sidebar-toggle');
+        const sidebar = document.querySelector('.sidebar');
+
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
