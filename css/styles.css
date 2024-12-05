@@ -77,6 +77,16 @@ header button:hover {
   color: white;
 }
 
+/* Profile Picture */
+.profile-img {
+  width: 300px; /* Adjust the width as needed */
+  height: auto;
+  display: block;
+  margin: 2rem auto; /* Center the image */
+  border-radius: 50%; /* Make the image round (optional) */
+  border: 5px solid var(--primary-color); /* Optional border around the image */
+}
+
 /* Navigation */
 nav {
   background-color: #333;
