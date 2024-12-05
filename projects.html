@@ -10,14 +10,17 @@
   <script src="script.js" defer></script>
 </head>
 <body class="projects-page">
+  <!-- Dark Mode Toggle Icon -->
+  <button id="theme-toggle" class="theme-toggle">🌙</button>
+
   <!-- Sidebar -->
   <aside class="sidebar">
     <button class="sidebar-toggle">☰</button>
     <ul>
-      <li><a href="index.html">Home</a></li> <!-- Added Home link -->
+      <li><a href="index.html">Home</a></li>
       <li><a href="index.html#projects">Projects</a></li>
       <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#skills">Skills</a></li> <!-- Added Skills link -->
+      <li><a href="index.html#skills">Skills</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
   </aside>
@@ -49,26 +52,6 @@
     </div>
   </section>
 
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="portfolio">
-    <h2>Portfolio Gallery</h2>
-    <div class="portfolio-container">
-      <div class="portfolio-item" data-caption="Project 1">
-        <img src="images/project1.jpg" alt="Portfolio Image for Project 1" class="portfolio-img">
-      </div>
-      <div class="portfolio-item" data-caption="Project 2">
-        <img src="images/project2.jpg" alt="Portfolio Image for Project 2" class="portfolio-img">
-      </div>
-    </div>
-  </section>
-
-  <!-- Modal -->
-  <div id="modal" class="modal" style="display: none;">
-    <span class="close">&times;</span>
-    <img id="modal-img" alt="Enlarged Portfolio Item">
-    <p id="caption"></p>
-  </div>
-
   <!-- Footer -->
   <footer>
     <p>&copy; 2024 Lamoy Spencer. All Rights Reserved.</p>
@@ -94,32 +77,24 @@
     // Apply the stored theme on page load
     if (storedTheme === 'dark') {
       body.classList.add('dark-mode');
-      themeToggle.textContent = '🌞'; 
+      themeToggle.textContent = '🌞';  // Change icon to sun for dark mode
     } else {
       body.classList.remove('dark-mode');
-      themeToggle.textContent = '🌙'; 
+      themeToggle.textContent = '🌙';  // Change icon to moon for light mode
     }
 
     // Toggle theme on button click
     themeToggle.addEventListener('click', () => {
       if (body.classList.contains('dark-mode')) {
         body.classList.remove('dark-mode');
-        themeToggle.textContent = '🌙'; 
-        localStorage.setItem('theme', 'light'); 
+        themeToggle.textContent = '🌙';  // Change icon to moon
+        localStorage.setItem('theme', 'light');
       } else {
         body.classList.add('dark-mode');
-        themeToggle.textContent = '🌞'; 
-        localStorage.setItem('theme', 'dark'); 
+        themeToggle.textContent = '🌞';  // Change icon to sun
+        localStorage.setItem('theme', 'dark');
       }
     });
-
-    // Sidebar Toggle Functionality
-        const sidebarToggle = document.querySelector('.sidebar-toggle');
-        const sidebar = document.querySelector('.sidebar');
-
-        sidebarToggle.addEventListener('click', () => {
-            sidebar.classList.toggle('active');
-        });
   </script>
 </body>
 </html>
