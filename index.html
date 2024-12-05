@@ -16,6 +16,12 @@
             <button id="theme-toggle">Switch Theme</button>
         </div>
     </header>
+  
+    <!-- Header with Typing Effect -->
+    <header>
+        <h1>Lamoy Spencer's Portfolio</h1>
+        <p id="typing-effect"></p>
+    </header>
 
     <!-- Navigation -->
     <nav>
@@ -36,23 +42,11 @@
 
     <!-- Projects Section -->
     <section id="projects">
-        <h2>My Projects</h2>
-        <input type="text" id="projectSearch" placeholder="Search projects...">
-        <select id="projectFilter">
-            <option value="all">All Projects</option>
-            <option value="web">Web Development</option>
-            <option value="data">Data Science</option>
-        </select>
-        <div class="project-container">
-            <!-- Individual Project Cards -->
-            <div class="project-card web">
-                <h3>Project 1</h3>
-                <p>Description of the first project.</p>
-            </div>
-            <div class="project-card data">
-                <h3>Project 2</h3>
-                <p>Description of the second project.</p>
-            </div>
+        <div class="portfolio-item">
+            <img src="project1.jpg" alt="Project 1">
+        </div>
+        <div class="portfolio-item">
+            <img src="project2.jpg" alt="Project 2">
         </div>
     </section>
 
@@ -71,6 +65,12 @@
             <button type="submit">Send</button>
         </form>
     </section>
+
+    <!-- Modal for Portfolio Item -->
+    <div class="modal">
+        <span class="modal-close">&times;</span>
+        <img src="" alt="Portfolio Image">
+    </div>
 
     <!-- Footer -->
     <footer>
