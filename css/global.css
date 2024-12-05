@@ -1,70 +1,166 @@
 /* Global Variables */
 :root {
+  /* Light Mode Variables */
   --primary-color: #ff4500; /* Orange Red */
   --secondary-color: #ff6347; /* Tomato */
   --background-color: #f5f5f5; /* Light Gray */
   --text-color: #333; /* Dark Text */
-  --font-heading: 'Montserrat', sans-serif;
-  --font-body: 'Roboto', sans-serif;
+  --card-background: #ffffff; /* White for cards */
+  --card-border: #ddd; /* Light gray border */
+
+  /* Dark Mode Variables */
+  --dark-primary-color: #ff6347; /* Tomato */
+  --dark-secondary-color: #ff4500; /* Orange Red */
+  --dark-background-color: #121212; /* Almost Black */
+  --dark-text-color: #f5f5f5; /* Light Gray Text */
+  --dark-card-background: #1e1e1e; /* Dark Gray for cards */
+  --dark-card-border: #444; /* Dark border */
 }
 
-/* Reset and Body */
+/* Reset and Box Model */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body Styles */
 body {
-  font-family: var(--font-body);
+  font-family: 'Roboto', sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* Sidebar Navigation */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #333; /* Dark background for sidebar */
+/* Dark Mode Body Styles */
+body.dark-mode {
+  background-color: var(--dark-background-color);
+  color: var(--dark-text-color);
+}
+
+/* General Layout Helpers */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+header, footer {
+  background-color: var(--primary-color);
+  color: white;
   padding: 1rem 0;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode header, 
+body.dark-mode footer {
+  background-color: var(--dark-primary-color);
+}
+
+/* Links */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+body.dark-mode a {
+  color: var(--dark-primary-color);
+}
+
+body.dark-mode a:hover {
+  color: var(--dark-secondary-color);
+}
+
+/* Buttons */
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+body.dark-mode button {
+  background-color: var(--dark-primary-color);
+}
+
+body.dark-mode button:hover {
+  background-color: var(--dark-secondary-color);
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #333;
+  padding: 1rem;
+  text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .sidebar ul {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .sidebar ul li a {
-  text-decoration: none;
-  font-family: 'Arial', sans-serif;
-  font-weight: bold;
   color: white;
-  background-color: var(--primary-color); /* Primary color for links */
+  background-color: var(--primary-color);
   padding: 0.5rem 1rem;
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .sidebar ul li a:hover {
-  background-color: var(--secondary-color); /* Hover effect with secondary color */
-  color: white;
+  background-color: var(--secondary-color);
+}
+
+body.dark-mode .sidebar {
+  background-color: #222;
+}
+
+body.dark-mode .sidebar ul li a {
+  background-color: var(--dark-primary-color);
+}
+
+body.dark-mode .sidebar ul li a:hover {
+  background-color: var(--dark-secondary-color);
+}
+
+/* Cards */
+.card {
+  background-color: var(--card-background);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+body.dark-mode .card {
+  background-color: var(--dark-card-background);
+  border: 1px solid var(--dark-card-border);
 }
 
 /* Footer */
 footer {
-  text-align: center;
-  margin-top: auto; /* Push footer to the bottom */
-  padding: 1rem;
-  background-color: #333;
-  color: white;
+  margin-top: auto;
+  font-size: 0.9rem;
 }
