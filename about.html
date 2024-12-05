@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Lamoy Spencer's Web Development Portfolio - About">
-    <title>About - Lamoy Spencer</title>
+    <meta name="description" content="Lamoy Spencer's Web Development Portfolio - Home">
+    <title>Home - Lamoy Spencer</title>
     <link rel="stylesheet" href="css/about.css">
     <script src="script.js" defer></script>
 </head>
@@ -21,7 +21,7 @@
         </ul>
     </aside>
     
-    <!-- About Me Section -->
+    <!-- Main Content -->
     <section id="about">
         <h2>About Me</h2>
         <p>Welcome to my personal portfolio! My name is Lamoy Spencer, and I am an international student from Jamaica, currently pursuing a degree in Computer Science at Lincoln University of Pennsylvania. I have always been passionate about technology and its power to solve complex problems, improve lives, and drive innovation. As a second-year student, I have developed a strong foundation in programming, data science, and web development, and I am constantly seeking new opportunities to expand my knowledge and skills.
@@ -35,13 +35,13 @@
     <footer>
         <p>&copy; 2024 Lamoy Spencer. All Rights Reserved.</p>
     </footer>
-    
+
     <!-- Theme Toggle Button -->
     <button id="theme-toggle">🌙</button>
 
     <!-- JavaScript -->
     <script>
-        // Theme Toggle
+        // Theme Toggle Functionality
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
 
@@ -57,7 +57,7 @@
             themeToggle.textContent = '🌙'; 
         }
 
-        // Toggle the theme on button click
+        // Toggle theme on button click
         themeToggle.addEventListener('click', () => {
             if (body.classList.contains('dark-mode')) {
                 body.classList.remove('dark-mode');
@@ -70,7 +70,7 @@
             }
         });
 
-        // Sidebar toggle functionality
+        // Sidebar Toggle Functionality
         const sidebarToggle = document.querySelector('.sidebar-toggle');
         const sidebar = document.querySelector('.sidebar');
 
