@@ -1,79 +1,115 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap');
-
-/* Root Variables for Colors and Theme */
-:root {
-  --primary-color: #4CAF50;
-  --secondary-color: #FF9800;
-  --background-color: #F4F4F4;
-  --text-color: #333;
-  --white: #fff;
-  --shadow-color: rgba(0, 0, 0, 0.1);
-}
-
 /* Global Styles */
-body {
-  font-family: 'Roboto', sans-serif;
+* {
   margin: 0;
   padding: 0;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  line-height: 1.6;
+  box-sizing: border-box;
 }
 
-h1, h2, h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
-  color: var(--primary-color);
   text-decoration: none;
-  transition: color 0.3s ease;
+  color: inherit;
 }
 
-a:hover {
-  color: var(--secondary-color);
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 1rem;
 }
 
-/* Header */
+p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Header Styles */
 header {
-  background: var(--primary-color);
-  color: var(--white);
-  padding: 1rem 2rem;
+  background: linear-gradient(to right, #4CAF50, #FF9800);
+  color: #fff;
+  padding: 2rem 5%;
   text-align: center;
-  box-shadow: 0 4px 6px var(--shadow-color);
+  position: relative;
+  z-index: 10;
 }
 
 header h1 {
-  margin: 0;
   font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
 }
 
-/* Container */
+header h2 {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+header a {
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Sticky Navigation Bar */
+nav {
+  position: sticky;
+  top: 0;
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+  z-index: 20;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+nav ul li {
+  margin: 0 2rem;
+}
+
+nav ul li a {
+  color: #fff;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #FF9800;
+}
+
+/* Container Styles */
 .container {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  padding: 0 1rem;
 }
 
-/* Cards */
 .card {
-  background: var(--white);
-  border-radius: 8px;
-  box-shadow: 0 4px 6px var(--shadow-color);
+  background: #fff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 8px 12px var(--shadow-color);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
@@ -82,55 +118,94 @@ header h1 {
   object-fit: cover;
 }
 
+.card .content {
+  padding: 1.5rem;
+  text-align: center;
+}
+
 .card h3 {
   font-size: 1.5rem;
-  margin: 1rem 0;
-  color: var(--primary-color);
+  color: #4CAF50;
 }
 
 .card p {
-  padding: 0 1rem 1rem;
-  color: var(--text-color);
+  color: #777;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
-/* Button Styles */
 button {
   display: inline-block;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
+  padding: 1rem 2rem;
+  background: #4CAF50;
+  color: #fff;
+  font-size: 1.2rem;
   border: none;
   border-radius: 5px;
-  background: var(--primary-color);
-  color: var(--white);
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
 button:hover {
-  background: var(--secondary-color);
+  background: #FF9800;
 }
 
 /* Footer */
 footer {
-  text-align: center;
+  background: #333;
+  color: #fff;
   padding: 1rem;
-  background: var(--primary-color);
-  color: var(--white);
+  text-align: center;
   margin-top: 2rem;
 }
 
-/* Responsive Design */
+/* Dark Mode */
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode header {
+  background: linear-gradient(to right, #FF9800, #4CAF50);
+}
+
+body.dark-mode nav {
+  background-color: #222;
+}
+
+body.dark-mode .card {
+  background: #444;
+  color: #fff;
+}
+
+body.dark-mode .card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode button {
+  background: #FF9800;
+  color: #333;
+}
+
+body.dark-mode button:hover {
+  background: #4CAF50;
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
   header h1 {
     font-size: 2rem;
   }
 
-  .container {
-    padding: 1rem;
-    gap: 1rem;
+  nav ul {
+    flex-direction: column;
   }
 
-  .card {
-    text-align: center;
+  nav ul li {
+    margin-bottom: 1rem;
+  }
+
+  .container {
+    padding: 0;
   }
 }
