@@ -1,30 +1,25 @@
-@import url('css/global.css');
-
-/* Skills Section */
-#skills {
+.skills {
   padding: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-#skills h2 {
-  text-align: center;
-  font-family: var(--font-heading);
-  color: var(--primary-color);
+body.dark-mode .skills {
+  background-color: var(--dark-background-color);
+  color: var(--dark-text-color);
 }
 
-.skill {
-  margin-bottom: 1.5rem;
+.skill-item {
+  background-color: #ffffff;
+  color: var(--text-color);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.skill-name {
-  font-weight: bold;
-}
-
-.progress-bar {
-  width: 0;
-  height: 20px;
-  background-color: var(--primary-color);
-  border-radius: 10px;
-  transition: width 0.5s ease;
+body.dark-mode .skill-item {
+  background-color: #1e1e1e;
+  color: var(--dark-text-color);
 }
