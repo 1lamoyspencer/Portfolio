@@ -155,4 +155,63 @@ body.dark-mode .sidebar ul li a:hover {
 }
 
 .nav-links ul {
-  list-style
+  list-style: none;
+}
+
+.nav-links ul li {
+  margin: 1rem;
+}
+
+.nav-links ul li a {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+body.dark-mode .nav-links ul li a {
+  color: var(--dark-primary-color);
+}
+
+/* Dark/Light Mode Button */
+.theme-toggle {
+  font-size: 2rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+body.dark-mode .theme-toggle {
+  color: var(--dark-primary-color);
+}
+
+.menu-toggle {
+  font-size: 2rem;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: transparent;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+body.dark-mode .menu-toggle {
+  color: var(--dark-primary-color);
+}
+
+/* About Section */
+#about {
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+footer {
+  font-size: 0.8rem;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+}
