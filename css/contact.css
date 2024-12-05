@@ -1,0 +1,67 @@
+/* Contact Page Specific Styles */
+#contact {
+  margin-top: 50px;
+}
+
+#contact h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+#contact p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+form input,
+form textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+}
+
+form button {
+  width: 100%;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+.social-links li {
+  margin-bottom: 10px;
+}
+
+.social-links a {
+  font-size: 1.1rem;
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px 0;
+  background-color: #f8f9fa;
+}
+
+footer p {
+  margin: 0;
+  color: #777;
+}
