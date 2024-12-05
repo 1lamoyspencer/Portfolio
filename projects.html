@@ -8,12 +8,12 @@
   <link rel="stylesheet" href="css/global.css">
   <script src="script.js" defer></script>
 </head>
-<body class ="prrojects-page">
+<body class="projects-page">
   <!-- Sidebar -->
   <aside class="sidebar">
     <button class="sidebar-toggle">☰</button>
     <ul>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
       <li><a href="index.html#about">About</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
@@ -70,6 +70,35 @@
   <footer>
     <p>&copy; 2024 Lamoy Spencer. All Rights Reserved.</p>
   </footer>
+
+  <script>
+    // Modal functionality for portfolio items
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const caption = document.getElementById('caption');
+    const closeBtn = document.querySelector('.close');
+
+    portfolioItems.forEach(item => {
+      item.addEventListener('click', () => {
+        modal.style.display = 'block';
+        modalImg.src = item.querySelector('img').src;
+        caption.innerText = item.getAttribute('data-caption');
+      });
+    });
+
+    // Close modal functionality
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    // Sidebar toggle functionality
+    const sidebarToggle = document.querySelector('.sidebar-toggle');
+    const sidebar = document.querySelector('.sidebar');
+
+    sidebarToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
-
