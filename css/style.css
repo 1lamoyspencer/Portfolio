@@ -48,7 +48,7 @@ body {
   text-decoration: none;
   font-family: 'Arial', sans-serif; /* Use a different font */
   font-weight: bold; /* Make the text bold */
-  color: white;
+  color: black;
   background-color: var(--primary-color); /* Add a box background */
   padding: 0.5rem 1rem; /* Add padding to create a box effect */
   border-radius: 5px; /* Round the corners of the box */
