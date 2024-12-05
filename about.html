@@ -7,8 +7,6 @@
     <title>About - Lamoy Spencer</title>
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/global.css">
-    <script src="script.js" defer></script>
-    
 </head>
 <body>
     <aside class="sidebar">
@@ -21,14 +19,57 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </aside>
+    
     <section id="about">
         <h2>About Me</h2>
-        <p>Welcome to my personal portfolio! 
-        My name is Lamoy Spencer, and I am an international student from Jamaica majoring in Computer Science at Lincoln University...</p>
+        <p>Welcome to my personal portfolio! My name is Lamoy Spencer, and I am an international student from Jamaica majoring in Computer Science at Lincoln University...</p>
     </section>
+    
     <footer>
         <p>&copy; 2024 Lamoy Spencer. All Rights Reserved.</p>
     </footer>
-    <script src="script.js"></script>
+    
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle">🌙</button>
+
+    <!-- JavaScript -->
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Check if there's a stored theme preference
+        const storedTheme = localStorage.getItem('theme');
+
+        // Apply the stored theme on page load
+        if (storedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeToggle.textContent = '🌞'; 
+        } else {
+            body.classList.remove('dark-mode');
+            themeToggle.textContent = '🌙'; 
+        }
+
+        // Toggle the theme on button click
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                themeToggle.textContent = '🌙'; 
+                localStorage.setItem('theme', 'light'); 
+            } else {
+                body.classList.add('dark-mode');
+                themeToggle.textContent = '🌞'; 
+                localStorage.setItem('theme', 'dark'); 
+            }
+        });
+
+        // Sidebar toggle functionality
+        const sidebarToggle = document.querySelector('.sidebar-toggle');
+        const sidebar = document.querySelector('.sidebar');
+
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
