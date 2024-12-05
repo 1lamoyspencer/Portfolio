@@ -79,7 +79,7 @@ header button:hover {
 
 /* Profile Picture */
 .profile-img {
-  width: 300px; /* Adjust the width as needed */
+  width: 30px; /* Adjust the width as needed */
   height: auto;
   display: block;
   margin: 2rem auto; /* Center the image */
