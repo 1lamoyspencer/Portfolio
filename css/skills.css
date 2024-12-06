@@ -34,6 +34,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
 }
 
 /* Dark Mode Body Styles */
@@ -54,6 +56,7 @@ body.dark-mode {
   flex-grow: 1; /* Ensures the skills section grows to fill the available space */
 }
 
+/* Skills Section Title */
 .skills-title {
   text-align: center;
   font-size: 2rem;
@@ -61,12 +64,14 @@ body.dark-mode {
   color: var(--primary-color);
 }
 
+/* Skills List */
 .skills-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1rem;
 }
 
+/* Skill Card */
 .skill-card {
   background-color: var(--card-background);
   border: 1px solid var(--card-border);
@@ -77,16 +82,19 @@ body.dark-mode {
   transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
 
+/* Skill Card Heading */
 .skill-card h3 {
   font-size: 1.5rem;
   color: var(--primary-color);
 }
 
+/* Skill Card Paragraph */
 .skill-card p {
   color: var(--text-color);
   font-size: 1rem;
 }
 
+/* Dark Mode Skill Cards */
 body.dark-mode .skill-card {
   background-color: var(--dark-card-background);
   border: 1px solid var(--dark-card-border);
