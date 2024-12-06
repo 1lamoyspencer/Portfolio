@@ -10,15 +10,20 @@
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script> <!-- Load EmailJS library -->
 </head>
 <body>
-  <!-- Navigation Bar -->
+ 
+  <!-- Sidebar -->
+    <aside class="sidebar">
+        <button class="sidebar-toggle">☰</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </aside>
   <header>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="projects.html" class="nav-link">Projects</a></li>
-        <li><a href="contact.html" class="nav-link active">Contact</a></li>
-      </ul>
+    
       <div class="theme-toggle">
         <button id="theme-toggle">🌙</button>
         <script>
