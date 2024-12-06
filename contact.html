@@ -7,6 +7,7 @@
   <title>Contact Me - Lamoy Spencer</title>
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/contact.css">
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script> <!-- Load EmailJS library -->
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -20,11 +21,10 @@
       </ul>
       <div class="theme-toggle">
         <button id="theme-toggle">🌙</button>
-
         <script>
           const themeToggle = document.getElementById('theme-toggle');
           const body = document.body;
-          
+
           const storedTheme = localStorage.getItem('theme');
           if (storedTheme === 'dark') {
             body.classList.add('dark-mode');
@@ -37,11 +37,11 @@
           themeToggle.addEventListener('click', () => {
             if (body.classList.contains('dark-mode')) {
               body.classList.remove('dark-mode');
-              themeToggle.textContent = '🌙'; 
+              themeToggle.textContent = '🌙';
               localStorage.setItem('theme', 'light');
             } else {
               body.classList.add('dark-mode');
-              themeToggle.textContent = '🌞'; 
+              themeToggle.textContent = '🌞';
               localStorage.setItem('theme', 'dark');
             }
           });
@@ -56,7 +56,7 @@
     <p>If you have any questions, feel free to reach out to me using the form below.</p>
 
     <!-- Contact Form -->
-    <form action="#" method="POST" id="contact-form">
+    <form id="contact-form"> <!-- Removed action and method -->
       <label for="name">Name</label>
       <input type="text" id="name" name="name" required placeholder="Your Name">
       
@@ -82,6 +82,36 @@
     <p>&copy; 2024 Lamoy Spencer. All rights reserved.</p>
   </footer>
 
-  <script src="assets/scripts/main.js"></script>
+  <!-- Script for EmailJS Integration -->
+  <script>
+    // Initialize EmailJS with your Public Key
+    (function() {
+      emailjs.init("qOmSIHRXAJSIGcOc3"); // Replace with your Public Key
+    })();
+
+    // Form submission handler
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Collect form data
+      const formData = {
+        name: this.name.value,
+        email: this.email.value,
+        message: this.message.value
+      };
+
+      // Use EmailJS to send the email
+      emailjs.send("service_yzmviup", "template_3bi1p7r", formData)
+        .then(() => {
+          alert("Your message has been sent successfully!"); // Success popup
+          this.reset(); // Reset the form
+        })
+        .catch((error) => {
+          alert("Oops! Something went wrong. Please try again later."); // Error popup
+          console.error("Error:", error);
+        });
+    });
+  </script>
 </body>
 </html>
+
