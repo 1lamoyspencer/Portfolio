@@ -1,116 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact Lamoy Spencer">
-  <title>Contact Me - Lamoy Spencer</title>
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/contact.css">
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script> <!-- Load EmailJS library -->
-</head>
-<body>
-  <!-- Navigation Bar -->
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="projects.html" class="nav-link">Projects</a></li>
-        <li><a href="contact.html" class="nav-link active">Contact</a></li>
-      </ul>
-      <div class="theme-toggle">
-        <button id="theme-toggle">🌙</button>
-        <script>
-          const themeToggle = document.getElementById('theme-toggle');
-          const body = document.body;
-
-          const storedTheme = localStorage.getItem('theme');
-          if (storedTheme === 'dark') {
-            body.classList.add('dark-mode');
-            themeToggle.textContent = '🌞';
-          } else {
-            body.classList.remove('dark-mode');
-            themeToggle.textContent = '🌙';
-          }
-
-          themeToggle.addEventListener('click', () => {
-            if (body.classList.contains('dark-mode')) {
-              body.classList.remove('dark-mode');
-              themeToggle.textContent = '🌙';
-              localStorage.setItem('theme', 'light');
-            } else {
-              body.classList.add('dark-mode');
-              themeToggle.textContent = '🌞';
-              localStorage.setItem('theme', 'dark');
-            }
-          });
-        </script>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h1>Contact Me</h1>
-    <p>If you have any questions, feel free to reach out to me using the form below.</p>
-
-    <!-- Contact Form -->
-    <form id="contact-form">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required placeholder="Your Name">
-      
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required placeholder="Your Email">
-
-      <label for="message">Message</label>
-      <textarea id="message" name="message" required placeholder="Your Message"></textarea>
-
-      <button type="submit">Send Message</button>
-    </form>
-
-    <h2>Or find me on:</h2>
-    <ul class="social-links">
-      <li><a href="https://www.linkedin.com/in/lamoy-spencer-3916a6281/" target="_blank">LinkedIn</a></li>
-      <li><a href="https://github.com/1lamoyspencer/Portfolio" target="_blank">GitHub</a></li>
-      <li><a href="mailto:lamoy.spencer@lions.lincoln.edu">Email</a></li>
-    </ul>
-  </section>
-
-  <!-- Footer Section -->
-  <footer>
-    <p>&copy; 2024 Lamoy Spencer. All rights reserved.</p>
-  </footer>
-
-  <!-- Script for EmailJS Integration -->
-  <script>
-    // Initialize EmailJS with your Public Key
-    (function() {
-      emailjs.init("qOmSIHRXAJSIGcOc3"); // Replace with your Public Key
-    })();
-
-    // Form submission handler
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
-      event.preventDefault(); // Prevent default form submission
-
-      // Collect form data
-      const formData = {
-        name: this.name.value,
-        email: this.email.value,
-        message: this.message.value
-      };
-
-      // Use EmailJS to send the email
-      emailjs.send("service_yzmviup", "template_3bi1p7r", formData)
-        .then(() => {
-          alert("Your message has been sent successfully!"); // Success popup
-          this.reset(); // Reset the form
-        })
-        .catch((error) => {
-          alert("Oops! Something went wrong. Please try again later."); // Error popup
-          console.error("Error:", error);
-        });
-    });
-  </script>
-</body>
-</html>
+// Theme Toggle
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+// Check if there's a stored theme preference
+const storedTheme = localStorage.getItem('theme');
+// Apply the stored theme on page load
+if (storedTheme === 'dark') {
+  body.classList.add('dark-mode');
+  themeToggle.textContent = '🌞'; 
+} else {
+  body.classList.remove('dark-mode');
+  themeToggle.textContent = '🌙'; 
+}
+// Toggle the theme on button click
+themeToggle.addEventListener('click', () => {
+  console.log('Theme toggle clicked!');
+  if (body.classList.contains('dark-mode')) {
+    body.classList.remove('dark-mode');
+    themeToggle.textContent = '🌙'; 
+    localStorage.setItem('theme', 'light'); 
+  } else {
+    body.classList.add('dark-mode');
+    themeToggle.textContent = '🌞'; 
+    localStorage.setItem('theme', 'dark'); 
+  }
+});
